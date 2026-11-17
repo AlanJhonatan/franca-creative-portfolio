@@ -7,6 +7,8 @@ nav {
   align-items: center;
 
   padding-left: 2rem;
+
+  scroll-target-group: auto;
 }
 
 .nav-wrapper {
@@ -33,9 +35,8 @@ nav {
   }
 }
 
-.nav-wrapper li.active {
+.nav-wrapper li:has(a:target-current) {
   background-color: blue;
-
   padding: 0.2rem 0.5rem;
 
   a {
