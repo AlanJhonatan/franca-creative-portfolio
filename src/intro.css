@@ -1,0 +1,55 @@
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+section.intro {
+  min-height: 100%;
+  width: auto;
+
+  background-color: blue;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+
+  padding-top: 2rem;
+}
+
+section.intro div.intro__inner {
+  max-width: 1440px;
+}
+
+section.intro span {
+  font-family: "Archivo Black";
+  font-weight: bold;
+
+  font-size: 6rem;
+  line-height: 105%;
+
+  text-box-trim: trim-both;
+  text-box-edge: cap alphabetic;
+
+  animation: reveal 1s cubic-bezier(0.25, 1, 0.5, 1);
+  animation-delay: calc(sibling-index() * 120ms);
+}
+
+section.intro span:not(.intro__dot, .intro__title) {
+  opacity: 0.6;
+
+  transition: opacity 0.2s linear;
+
+  &:hover {
+    opacity: 1;
+    cursor: cell;
+  }
+}
+
+section.intro span.intro__dot {
+  margin: 0 1.2rem;
+}

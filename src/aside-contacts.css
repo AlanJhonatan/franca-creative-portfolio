@@ -1,0 +1,19 @@
+aside.contacts {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  height: 100vh;
+  min-width: 20px;
+
+  writing-mode: sideways-lr;
+
+  display: flex;
+  justify-content: space-evenly;
+
+  padding-right: 0.35rem;
+}
+
+aside.contacts a:hover {
+  font-weight: 700;
+}

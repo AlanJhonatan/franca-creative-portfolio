@@ -1,0 +1,11 @@
+import "./reset.css";
+import "./layout.css";
+import "./intro.css";
+import "./progress-bar.css";
+import "./nav.css";
+import "./about-me.css";
+import "./projects.css";
+import "./techstack.css";
+import "./testimonials.css";
+import "./aside-contacts.css";
+import "./footer-label.css";

@@ -1,0 +1,52 @@
+#techstack {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+#techstack div.section__title {
+  width: fit-content;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 1rem;
+
+  background-color: blue;
+  color: white;
+}
+
+#techstack .techstack-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+#techstack .techstack-item {
+  .techstack-item__title {
+    width: 100%;
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 0.2rem;
+
+    background-color: blue;
+    color: white;
+  }
+
+  .techstack-item__row {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 0.2rem 0.5rem;
+
+    font-family: monospace;
+    color: #808080;
+
+    &:hover {
+      background: blue;
+      color: white;
+      opacity: 0.65;
+      cursor: grab;
+      font-weight: bold;
+    }
+  }
+}

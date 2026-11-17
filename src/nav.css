@@ -1,0 +1,44 @@
+nav {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding-left: 2rem;
+}
+
+.nav-wrapper {
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-wrapper ul {
+  list-style-type: none;
+}
+
+.nav-wrapper li {
+  margin-bottom: 0.25rem;
+}
+
+.nav-wrapper li a {
+  text-decoration: none;
+  color: #808080;
+
+  &:hover {
+    font-weight: 500;
+    color: black;
+  }
+}
+
+.nav-wrapper li.active {
+  background-color: blue;
+
+  padding: 0.2rem 0.5rem;
+
+  a {
+    color: white;
+  }
+}

@@ -1,0 +1,30 @@
+@keyframes progress-bar-animation {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-image: repeating-linear-gradient(
+    90deg,
+    blue 0px,
+    blue 12px,
+    transparent 12px,
+    transparent 15px
+  );
+
+  animation-name: progress-bar-animation;
+  animation-timeline: scroll(root);
+  animation-timing-function: steps(calc(100vw / 12px), end);
+}
