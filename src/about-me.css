@@ -1,56 +1,42 @@
-#about-me {
+#about-me p,
+#about-me span {
+  color: #808080;
+}
+
+section#about-me {
   display: flex;
   flex-direction: column;
+}
 
-  justify-content: space-evenly;
-  padding: 2rem;
+section#about-me div.about-me-block {
+  display: flex;
+  gap: 2rem;
 
-  p,
-  span {
-    color: blue;
+  margin-bottom: 3rem;
+
+  div.about-me-block__left {
+    img {
+      width: 180px;
+    }
   }
 
-  h2 {
-    padding: 0.2rem 0.5rem;
-    width: fit-content;
-    background-color: blue;
-    color: white;
-    margin-bottom: 1rem;
+  div.about-me-block__right {
+    p {
+      margin-bottom: 2rem;
+    }
   }
 }
 
-#about-me div.about-me__text {
-  height: 100%;
-
-  h2 {
-    margin-bottom: 1rem;
-  }
-
-  div.about-me__paragraphs {
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 1rem;
-  }
-
-  p {
-    margin-bottom: 1rem;
-    color: #808080;
-  }
+section#about-me div.second-block {
+  margin-block: auto;
 }
 
-#about-me div.about-me__block {
-  max-width: 1050px;
+section#about-me div.about-me-brands {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
 
-#about-me div.brands-wrapper {
-  max-width: 1050px;
-
-  display: flex;
-  justify-content: space-between;
+  img:hover {
+    transform: scale(1.2);
+    filter: contrast(100%) blur(100%);
+  }
 }

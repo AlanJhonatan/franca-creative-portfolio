@@ -1,8 +1,9 @@
-#techstack {
-  display: flex;
+section#techstack {
+  padding-top: 10vh;
+  /* display: flex;
   flex-direction: column;
 
-  justify-content: center;
+  justify-content: center; */
 }
 
 #techstack div.section__title {

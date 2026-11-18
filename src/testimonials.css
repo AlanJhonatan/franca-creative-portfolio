@@ -1,16 +1,3 @@
-section#testimonials {
-  padding-top: 10vh;
-  .testimonials__title {
-    width: fit-content;
-
-    background-color: blue;
-    color: white;
-
-    padding: 0.2rem 0.5rem;
-    margin-bottom: 2rem;
-  }
-}
-
 section#testimonials .testimonials-grid {
   display: flex;
   flex-direction: column;

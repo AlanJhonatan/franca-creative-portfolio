@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
 }
 
 body {
@@ -16,5 +17,34 @@ main {
 }
 
 section {
+  /* height: 100vh; */
+  scroll-snap-align: center;
+  scroll-margin-block: 150px;
+}
+
+section#about-me,
+section#projects,
+section#techstack,
+section#testimonials,
+section#contacts {
   height: 100vh;
+
+  padding: 4.5rem 0;
+
+  div.section__title {
+    width: fit-content;
+
+    background-color: blue;
+    color: white;
+
+    padding: 0.2rem 0.85rem;
+    margin-bottom: 2rem;
+
+    h2 {
+      width: fit-content;
+
+      background-color: blue;
+      color: white;
+    }
+  }
 }

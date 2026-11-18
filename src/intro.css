@@ -9,8 +9,8 @@
 }
 
 section.intro {
-  min-height: 100%;
-  width: auto;
+  min-height: 100vh;
+  height: fit-content;
 
   background-color: blue;
   color: white;
@@ -19,6 +19,8 @@ section.intro {
   justify-content: center;
 
   padding-top: 2rem;
+  padding-bottom: 3rem;
+  margin-bottom: 7rem;
 }
 
 section.intro div.intro__inner {
