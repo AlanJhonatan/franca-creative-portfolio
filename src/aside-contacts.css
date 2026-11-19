@@ -11,7 +11,7 @@ aside.contacts {
   display: flex;
   justify-content: space-evenly;
 
-  padding-right: 0.35rem;
+  padding-right: 0.75rem;
 
   a {
     color: inherit;
