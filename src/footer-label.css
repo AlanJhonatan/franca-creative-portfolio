@@ -1,3 +1,13 @@
+@keyframes marquee-effect {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 .footer-label {
   position: fixed;
   bottom: 0;
@@ -10,4 +20,29 @@
   color: white;
 
   font-family: monospace;
+}
+
+.footer-label .marquee {
+  display: flex;
+  white-space: nowrap;
+  gap: 1rem;
+}
+
+.footer-label .marquee-group {
+  min-width: 100%;
+
+  animation: marquee-effect 13s linear infinite;
+
+  display: flex;
+  justify-content: space-around;
+
+  span {
+    flex-shrink: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-group {
+    animation-play-state: paused;
+  }
 }
