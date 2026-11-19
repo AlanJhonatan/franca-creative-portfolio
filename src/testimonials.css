@@ -151,3 +151,9 @@ section#testimonials label.testimonials-item__action {
     }
   }
 }
+
+@media (max-width: 767px) {
+  section#testimonials div.testimonials-item__actions {
+    margin-top: 0.5rem;
+  }
+}
