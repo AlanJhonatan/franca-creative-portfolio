@@ -21,3 +21,9 @@ aside.contacts {
 aside.contacts a:hover {
   font-weight: 700;
 }
+
+@media (max-width: 767px) {
+  aside.contacts {
+    display: none;
+  }
+}

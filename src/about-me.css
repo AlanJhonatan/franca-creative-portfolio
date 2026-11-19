@@ -40,3 +40,19 @@ section#about-me div.about-me-brands {
     filter: contrast(100%) blur(100%);
   }
 }
+
+@media (max-width: 767px) {
+  section#about-me .about-me-block {
+    flex-direction: column;
+  }
+
+  section#about-me div.second-block {
+    margin-block: 0;
+
+    .about-me-brands {
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+}

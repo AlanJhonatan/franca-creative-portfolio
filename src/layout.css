@@ -49,3 +49,24 @@ section#contacts {
     }
   }
 }
+
+@media (max-width: 767px) {
+  html {
+    scroll-snap-type: none;
+  }
+
+  main {
+    grid-template-columns: 100%;
+  }
+
+  section#about-me,
+  section#projects,
+  section#techstack,
+  section#testimonials,
+  section#contacts {
+    padding: 2rem 1.25rem;
+    min-height: 100svh;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+}

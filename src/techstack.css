@@ -1,9 +1,5 @@
 section#techstack {
   padding-top: 10vh;
-  /* display: flex;
-  flex-direction: column;
-
-  justify-content: center; */
 }
 
 #techstack div.section__title {
@@ -48,5 +44,11 @@ section#techstack {
       cursor: grab;
       font-weight: bold;
     }
+  }
+}
+
+@media (max-width: 767px) {
+  #techstack .techstack-grid {
+    grid-template-columns: 100%;
   }
 }
