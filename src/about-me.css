@@ -35,6 +35,10 @@ section#about-me div.about-me-brands {
   display: flex;
   justify-content: space-between;
 
+  img {
+    max-width: 120px;
+  }
+
   img:hover {
     transform: scale(1.2);
     filter: contrast(100%) blur(100%);
