@@ -45,7 +45,6 @@ section#techstack {
     &:hover {
       background: blue;
       color: white;
-      opacity: 0.65;
       cursor: grab;
       font-weight: bold;
     }

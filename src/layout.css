@@ -18,6 +18,11 @@ section {
   scroll-margin-block: 150px;
 }
 
+::selection {
+  background-color: blue;
+  color: white;
+}
+
 section#about-me,
 section#projects,
 section#techstack,
