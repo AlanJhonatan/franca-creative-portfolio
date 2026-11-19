@@ -4,7 +4,7 @@
   }
 
   to {
-    transform: translateX(-100%);
+    transform: translateX(calc(-100% - 1rem));
   }
 }
 
@@ -24,20 +24,34 @@
 
 .footer-label .marquee {
   display: flex;
-  white-space: nowrap;
   gap: 1rem;
+
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .footer-label .marquee-group {
   min-width: 100%;
 
-  animation: marquee-effect 13s linear infinite;
-
   display: flex;
   justify-content: space-around;
+  gap: 0.75rem;
 
-  span {
-    flex-shrink: 0;
+  flex-shrink: 0;
+  white-space: nowrap;
+
+  animation: marquee-effect 12s linear infinite;
+
+  /* animation-play-state: paused; */
+}
+
+.footer-label .marquee-group span {
+  flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .footer-label {
+    height: 40px;
   }
 }
 
