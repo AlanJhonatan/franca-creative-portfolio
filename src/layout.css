@@ -14,8 +14,7 @@ main {
 }
 
 section {
-  scroll-snap-align: center;
-  scroll-margin-block: 150px;
+  scroll-snap-align: start;
 }
 
 ::selection {
@@ -25,10 +24,13 @@ section {
 
 section#about-me,
 section#projects,
+section#experiences,
 section#techstack,
 section#testimonials,
 section#contacts {
-  height: 100vh;
+  min-height: 100dvh;
+
+  height: auto;
 
   padding: 4.5rem 0;
 
@@ -61,6 +63,7 @@ section#contacts {
 
   section#about-me,
   section#projects,
+  section#experiences,
   section#techstack,
   section#testimonials,
   section#contacts {

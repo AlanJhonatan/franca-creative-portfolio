@@ -1,0 +1,85 @@
+section#experiences .experiences-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  color: black;
+}
+
+section#experiences .experiences-item {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #808080;
+}
+
+section#experiences .experiences-item__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+section#experiences .experiences-item__title {
+  display: flex;
+  flex-direction: column;
+}
+
+section#experiences .experiences-item__role {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+section#experiences .experiences-item__company {
+  font-size: 1rem;
+  color: #808080;
+}
+
+section#experiences .experiences-item__year {
+  font-size: 1rem;
+  color: #808080;
+}
+
+section#experiences .experiences-item__content {
+  list-style-position: inside;
+
+  li {
+    list-style-type: square;
+    position: relative;
+
+    margin-bottom: 0.35rem;
+  }
+
+  /* li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 5px;
+    height: 5px;
+
+    background-color: blue;
+  } */
+}
+
+@media (max-width: 767px) {
+  section#experiences .experiences-item__header {
+    flex-direction: column;
+  }
+
+  section#experiences .experiences-item__role {
+    font-size: 1.5rem;
+    white-space: nowrap;
+  }
+
+  section#experiences .experiences-item__company {
+    font-size: 0.975rem;
+    color: #808080;
+
+    white-space: nowrap;
+  }
+
+  section#experiences .experiences-item__year {
+    font-size: 0.7rem;
+    color: #808080;
+  }
+}

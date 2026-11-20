@@ -5,6 +5,7 @@ import "./progress-bar.css";
 import "./nav.css";
 import "./about-me.css";
 import "./projects.css";
+import "./experiences.css";
 import "./techstack.css";
 import "./testimonials.css";
 import "./aside-contacts.css";
