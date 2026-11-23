@@ -1,3 +1,20 @@
+@keyframes alterna-palavra {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  5%,
+  45% {
+    opacity: 1;
+    transform: translateY(0); /* Fica visível e parada na posição original */
+  }
+  50%,
+  100% {
+    opacity: 0;
+    transform: translateY(-20px); /* Some subindo */
+  }
+}
+
 #about-me p,
 #about-me span {
   color: #808080;
@@ -27,6 +44,47 @@ section#about-me div.about-me-block {
   }
 }
 
+section#about-me .about-me__paragraphs {
+  p {
+    line-height: 1.8;
+  }
+
+  span.highlight {
+    font-weight: bold;
+    line-height: 1.5;
+
+    background-color: blue;
+    color: white;
+
+    padding: 0.2rem 0.5rem;
+
+    white-space: nowrap;
+    display: inline-block;
+  }
+
+  span.word-switch {
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    vertical-align: center;
+    overflow: hidden; /* Esconde a palavra que está fora do foco */
+    height: 2em;
+
+    .span {
+      grid-area: 1 / 1; /* Empilha os dois spans exatamente no mesmo espaço */
+      opacity: 0;
+      transform: translateY(20px); /* Começa um pouco abaixo */
+
+      /* Configuração da animação: duração total de 6s em loop */
+      animation: alterna-palavra 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+
+    .word-switch__second {
+      animation-delay: 3s;
+    }
+  }
+}
+
 section#about-me div.second-block {
   margin-block: auto;
 }
@@ -48,6 +106,16 @@ section#about-me div.about-me-brands {
 @media (max-width: 767px) {
   section#about-me .about-me-block {
     flex-direction: column;
+  }
+
+  section#about-me .about-me__paragraphs {
+    p {
+      line-height: 2;
+    }
+
+    span {
+      line-height: 1.5;
+    }
   }
 
   section#about-me div.second-block {
