@@ -1,44 +1,45 @@
 ---
 name: "pretty-commit"
-description: "Ativada quando o usuário pede para realizar um commit ou salvar alterações parciais. Esta habilidade isola linhas específicas de código de um arquivo no stage usando Git interativo (hunks/line staging) e cria um commit altamente padronizado."
+description: "Triggered when the user requests a commit or partial staging. This skill isolates specific lines of code using interactive Git staging (hunks/line staging) and creates highly standardized commits."
 ---
 
 # Rules
 
-- [IMPORTANT] Esta habilidade de commit é leve e performática. Recomenda-se executá-la utilizando modelos mais rápidos (ex: Flash) para economizar tokens. Se o modelo atual for High/Pro, o agente deve sugerir ao usuário via chat que mude para o Flash caso seja uma operação simples.
-- sempre que o usuário pedir um commit ele deve fornecer também um `contexto/resumo` sobre o que foi feito para facilitar o trabalho do agente
-- caso o usuário não forneça `contexto/resumo` adicional sobre o que foi feito, é dever do agente perguntar para o usuário "O que tanto você fez e quer incluir nesse commit?"
-- importante olhar para o `contexto/resumo adicional do usuário` PRIMEIRO e depois olhar para o `git diff` para encontrar os Hunks/Line Staging correspondentes -- e sempre que possível, isolar esses pedaços -- ao que deve ser incluido para depois realizar os `git add` de cada parte
-- usar padrão `conventional commits` para mensagem
+- [IMPORTANT] This commit skill is lightweight and performant. It is recommended to run it using faster models (e.g. Flash) to save tokens. If the current model is High/Pro, the agent should suggest in chat that the user switch to Flash for simple operations.
+- Whenever the user asks for a commit, they must provide a `context/summary` of what was done to guide the agent.
+- If the user does not provide additional `context/summary`, the agent must ask: "What changes did you make that you'd like to include in this commit?"
+- It is important to inspect the `user's context/summary` FIRST, then run `git diff` to locate matching hunks/line stagings — isolating those chunks wherever possible before staging them with `git add`.
+- Use the `conventional commits` format for commit messages:
   - `<operation>: <message>`
     Operations:
-  - feat -> Quando você adiciona uma nova funcionalidade ao sistema.
-  - fix -> Quando você realiza a correção de um bug ou comportamento inesperado.
-  - refactor -> Mudança estrutural que não corrige bug e não adiciona feature (limpeza de código).
-  - style -> Alterações apenas de formatação, espaços ou ponto e vírgula (sem mexer na lógica).
-  - docs -> Modificações exclusivamente em arquivos de documentação (como o README.md).
-  - perf -> Alterações de código com foco estrito em ganho de performance.
-  - chore -> Atualizações de tarefas de build, pacotes, infraestrutura ou arquivos de configuração.
-  - ci -> Mudanças em scripts de integração e deploy contínuo (ex: GitHub Actions).
+  - feat -> A new feature added to the system.
+  - fix -> A bug fix or resolution of unexpected behavior.
+  - refactor -> Structural change that neither fixes a bug nor adds a feature (code cleanup).
+  - style -> Formatting, whitespace, or semicolon changes only (no logic change).
+  - docs -> Changes exclusively to documentation files (e.g. README.md).
+  - perf -> Code changes strictly focused on performance improvements.
+  - chore -> Updates to build tasks, packages, infrastructure, or config files.
+  - ci -> Changes to CI/CD integration and deployment scripts (e.g. GitHub Actions).
     Message:
-  - Use o modo imperativo: Escreva a mensagem como uma ordem ou instrução atual
-  - Letras minúsculas: A primeira letra após o espaço não deve ser maiúscula
-  - Sem ponto final: Não encerre a frase com ponto ou caracteres especiais no fim da descrição.
-  - Limite de caracteres: Mantenha a primeira linha com no máximo 50 a 72 caracteres para evitar quebras em ferramentas de CLI.
-- Pode usar emojis, ta liberado.
+  - Use the imperative mood: write the message as a command or present instruction (e.g. "add", "fix").
+  - Lowercase: the first letter following `<operation>: ` should not be capitalized.
+  - No trailing period: do not end the line with a period or special punctuation.
+  - Character limit: keep the subject line between 50 and 72 characters max.
+  - Commit message language: English.
+- Emojis are allowed and encouraged.
 
 # Steps
 
-1. Se o usuário não forneceu `contexto/resumo adicional` PEÇA À ELE, É OBRIGATÓRIO
-2. Execute o comando `git status` e `git diff` para traçar tudo relacionado ao que o usuario pediu
-3. Se houver modificações diferentes fora do escopo que o usuário pediu, identifique os arquivos e linhas alvos e execute `git add -p <caminho_do_arquivo>` para selecionar precisamente, do contrário, pode ir pro `git add` da pasta e ir pro `step 9`.
-4. Quando o prompt do Git abrir, envie `s` para dividir (split) o hunk em pedaços menores.
-5. Digite `y` apenas nos blocos de linhas correspondentes à tarefa atual e `n` nos demais.
-6. Digite `q` para sair do modo interativo se terminar antes do fim do arquivo.
-7. Valide o resultado com `git diff --cached` antes de prosseguir para o commit.
-8. Se tiver algo errado, pode refazer baseado nos steps anteriores
-9. Gere a mensagem no formato conventional commits (explicito em RULES)
-10. Faça o output dos commits e messages, e peça a validação do usuário.
+1. If the user did not provide additional context/summary, ASK THEM. THIS IS MANDATORY.
+2. Run `git status` and `git diff` to inspect all changes related to the user's request.
+3. If there are changes outside the user's requested scope, identify the target files/lines and run `git add -p <file_path>` to interactively pick lines. Otherwise, stage the files directly with `git add` and proceed to step 9.
+4. When the interactive Git prompt opens, send `s` to split the hunk into smaller chunks if needed.
+5. Enter `y` only on chunks matching the current task, and `n` on others.
+6. Enter `q` to quit interactive staging early if finished before end of file.
+7. Verify the staged changes using `git diff --cached` before creating the commit.
+8. If anything looks incorrect, unstage/re-stage based on previous steps.
+9. Generate the commit message following conventional commits (as detailed in RULES).
+10. Output the proposed commit message and ask the user for confirmation.
 
 # Template
 
@@ -46,5 +47,5 @@ description: "Ativada quando o usuário pede para realizar um commit ou salvar a
 
 features on this commit:
 
-- <alteração detalhada 1 baseada nas linhas do stage>
-- <alteração detalhada 2 baseada nas linhas do stage>
+- <detailed change 1 based on staged lines>
+- <detailed change 2 based on staged lines>
