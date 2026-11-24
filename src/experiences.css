@@ -6,7 +6,7 @@ section#experiences .experiences-list {
   color: black;
 }
 
-section#experiences .experiences-item {
+section#experiences .experiences-item:not(:last-child) {
   padding-bottom: 1rem;
   border-bottom: 1px solid #808080;
 }
@@ -44,21 +44,8 @@ section#experiences .experiences-item__content {
     list-style-type: square;
     position: relative;
 
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.5rem;
   }
-
-  /* li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 5px;
-    height: 5px;
-
-    background-color: blue;
-  } */
 }
 
 @media (max-width: 767px) {
