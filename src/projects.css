@@ -2,111 +2,78 @@ section#projects {
   display: flex;
   flex-direction: column;
 
-  --brand-gol-color: blue;
-  --brand-gft-color: blue;
-  --brand-lenovo-color: blue;
+  color: white;
 }
 
-section#projects div.projects-list {
-  flex: 1;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 3rem;
-}
-
-section#projects div.project-card {
-  div.project-card__title {
-    /* margin-bottom: 0.5rem; */
-  }
-
-  div.project-card__description {
-    color: #808080;
-    margin-bottom: 0.5rem;
-  }
-
-  div.project-card__techstack {
-    font-family: monospace;
-    color: #808080;
-  }
-}
-
-section#projects .project-card__title {
+section#projects .badge-blue {
   width: max-content;
+
+  background-color: blue;
+  color: white;
+
   padding: 0.2rem 1rem;
 }
 
-section#projects .bento-grid {
-  display: flex;
-  /* margin: 0;
-  padding: 1.25rem 2rem 2rem 2rem; */
-}
-
-section#projects .bento-box {
-  width: max-content;
-  max-width: 320px;
-
+section#projects .projects-list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
 
-  padding: 1rem 2rem;
-  border: 4px solid white;
-  box-shadow: 8px 8px 0 white;
+  gap: 2rem;
 }
 
-section#projects .bento-box__title {
+section#projects .project-carousel {
+  min-width: 100%;
+
+  padding: 1rem;
+
+  background-color: blue;
+}
+
+section#projects .project-carousel__inner {
+  display: flex;
+  gap: 1rem;
+
+  padding: 1rem;
+
+  border: 1px solid white;
+}
+
+section#projects .project-carousel__inner {
+  display: flex;
+  gap: 1rem;
+
+  flex-wrap: nowrap;
+
+  padding: 1.5rem;
+
+  border: 1px solid white;
+  overflow-x: scroll;
+}
+
+section#projects .project-carousel__item {
+  width: min-content;
+  min-width: 385px;
+
+  flex-shrink: 0;
+}
+
+section#projects .project-carousel__title {
   width: max-content;
-  font-weight: bold;
-  padding: 0.2rem 0.75rem;
+
   background-color: white;
+  color: blue;
+  font-weight: bold;
+  font-size: 1.25rem;
+
+  white-space: nowrap;
+
+  padding: 0.2rem 1rem;
+  margin-bottom: 0.5rem;
 }
 
-section#projects div.project-card.gol {
-  .project-card__title {
-    background-color: var(--brand-gol-color);
-    color: white;
-  }
+section#projects .project-carousel__text {
+  line-height: 1.6;
 
-  div.bento-grid {
-    background-color: var(--brand-gol-color);
-    color: white;
-  }
-
-  .bento-box__title {
-    color: var(--brand-gol-color);
-  }
-}
-
-section#projects div.project-card.gft {
-  .project-card__title {
-    background-color: var(--brand-gft-color);
-    color: white;
-  }
-
-  div.bento-grid {
-    background-color: var(--brand-gft-color);
-    color: white;
-  }
-
-  .bento-box__title {
-    color: var(--brand-gft-color);
-  }
-}
-
-section#projects div.project-card.lenovo {
-  .project-card__title {
-    background-color: var(--brand-lenovo-color);
-    color: white;
-  }
-
-  div.bento-grid {
-    background-color: var(--brand-lenovo-color);
-    color: white;
-  }
-
-  .bento-box__title {
-    color: var(--brand-lenovo-color);
-  }
+  white-space: normal;
+  word-break: break-word;
 }
