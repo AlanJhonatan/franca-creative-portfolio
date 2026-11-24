@@ -37,15 +37,6 @@ section#projects .project-carousel__inner {
   display: flex;
   gap: 1rem;
 
-  padding: 1rem;
-
-  border: 1px solid white;
-}
-
-section#projects .project-carousel__inner {
-  display: flex;
-  gap: 1rem;
-
   flex-wrap: nowrap;
 
   padding: 1.5rem;
@@ -102,4 +93,68 @@ section#projects .project-carousel__text {
     width: auto;
     white-space: normal;
   }
+}
+
+.win95-scroll::-webkit-scrollbar {
+  height: 16px;
+  background-color: #dfdfdf;
+}
+
+.win95-scroll::-webkit-scrollbar-track {
+  /* chess pattern of scrollbar background */
+  background-image: conic-gradient(
+    #ffffff 0.25turn,
+    #808080 0.25turn 0.5turn,
+    #ffffff 0.5turn 0.75turn,
+    #808080 0.75turn
+  );
+  background-size: 2px 2px;
+}
+
+.win95-scroll::-webkit-scrollbar-thumb {
+  background-color: #dfdfdf;
+
+  /* WIN95 default border */
+  box-shadow:
+    inset 1px 1px 0px #ffffff,
+    inset -1px -1px 0px #0a0a0a,
+    inset -2px -2px 0px #808080;
+}
+
+.win95-scroll::-webkit-scrollbar-thumb:active {
+  box-shadow:
+    inset 1px 1px 0px #0a0a0a,
+    inset 2px 2px 0px #808080,
+    inset -1px -1px 0px #ffffff;
+}
+
+/* ARROW BUTTONS */
+.win95-scroll::-webkit-scrollbar-button:single-button {
+  background-color: #dfdfdf;
+  display: block;
+  width: 16px;
+  height: 16px;
+  box-shadow:
+    inset 1px 1px 0px #ffffff,
+    inset -1px -1px 0px #0a0a0a,
+    inset -2px -2px 0px #808080;
+}
+
+.win95-scroll::-webkit-scrollbar-button:single-button:active {
+  box-shadow:
+    inset 1px 1px 0px #0a0a0a,
+    inset 2px 2px 0px #808080,
+    inset -1px -1px 0px #ffffff;
+}
+
+/* LEFT ARROW */
+.win95-scroll::-webkit-scrollbar-button:single-button:decrement {
+  background-image: url("./assets/icons/scroll-arrow-left.svg");
+  background-size: 100%;
+}
+
+/* RIGHT ARROW */
+.win95-scroll::-webkit-scrollbar-button:single-button:increment {
+  background-image: url("./assets/icons/scroll-arrow-right.svg");
+  background-size: 100%;
 }
