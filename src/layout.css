@@ -17,9 +17,13 @@ section {
   scroll-snap-align: start;
 }
 
+mark {
+  padding: 0.1rem 0.25rem;
+}
+
 ::selection {
-  background-color: blue;
-  color: white;
+  background-color: #ffff00;
+  color: black;
 }
 
 section#about-me,

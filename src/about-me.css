@@ -1,95 +1,45 @@
-@keyframes alterna-palavra {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  5%,
-  45% {
-    opacity: 1;
-    transform: translateY(0); /* Fica visível e parada na posição original */
-  }
-  50%,
-  100% {
-    opacity: 0;
-    transform: translateY(-20px); /* Some subindo */
-  }
-}
-
-#about-me p,
-#about-me span {
-  color: #808080;
-}
-
 section#about-me {
+  color: #808080;
+  font-weight: medium;
+
   display: flex;
   flex-direction: column;
+
+  justify-content: space-between;
 }
 
-section#about-me div.about-me-block {
-  display: flex;
-  gap: 2rem;
-
-  margin-bottom: 3rem;
-
-  div.about-me-block__left {
-    img {
-      width: 180px;
-    }
-  }
-
-  div.about-me-block__right {
-    p {
-      margin-bottom: 2rem;
-    }
-  }
+section#about-me div.section__title {
+  margin-bottom: 1rem;
 }
 
-section#about-me .about-me__paragraphs {
-  p {
-    line-height: 1.8;
-  }
+section#about-me .intro__text {
+  line-height: 2;
 
-  span.highlight {
-    font-weight: bold;
-    line-height: 1.5;
-
-    background-color: blue;
-    color: white;
-
-    padding: 0.2rem 0.5rem;
-
-    white-space: nowrap;
-    display: inline-block;
-  }
-
-  span.word-switch {
-    display: inline-grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    vertical-align: center;
-    overflow: hidden; /* Esconde a palavra que está fora do foco */
-    height: 2em;
-
-    .span {
-      grid-area: 1 / 1; /* Empilha os dois spans exatamente no mesmo espaço */
-      opacity: 0;
-      transform: translateY(20px); /* Começa um pouco abaixo */
-
-      /* Configuração da animação: duração total de 6s em loop */
-      animation: alterna-palavra 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-
-    .word-switch__second {
-      animation-delay: 3s;
-    }
-  }
+  margin-bottom: 2rem;
 }
 
-section#about-me div.second-block {
-  margin-block: auto;
+section#about-me mark {
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 0 0.5rem;
+
+  white-space: nowrap;
+  display: inline-block;
 }
 
-section#about-me div.about-me-brands {
+section#about-me .focus-list ul {
+  list-style-position: inside;
+  list-style-type: none;
+
+  padding-left: 0;
+  margin: 0;
+}
+
+section#about-me .focus-list li {
+  margin-bottom: 1rem;
+}
+
+section#about-me .brands-images {
   display: flex;
   justify-content: space-between;
 
@@ -104,27 +54,9 @@ section#about-me div.about-me-brands {
 }
 
 @media (max-width: 767px) {
-  section#about-me .about-me-block {
-    flex-direction: column;
-  }
-
-  section#about-me .about-me__paragraphs {
-    p {
-      line-height: 2;
-    }
-
-    span {
-      line-height: 1.5;
-    }
-  }
-
-  section#about-me div.second-block {
-    margin-block: 0;
-
-    .about-me-brands {
-      gap: 1.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+  section#about-me .brands-images {
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 }
