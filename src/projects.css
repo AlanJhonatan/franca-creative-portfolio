@@ -5,6 +5,10 @@ section#projects {
   color: white;
 }
 
+section#projects mark {
+  white-space: nowrap;
+}
+
 section#projects .badge-blue {
   width: max-content;
 
@@ -76,4 +80,26 @@ section#projects .project-carousel__text {
 
   white-space: normal;
   word-break: break-word;
+}
+
+@media (max-width: 767px) {
+  section#projects .project-view__title {
+    width: 100%;
+    text-align: center;
+
+    h2 {
+      font-size: 1.3rem;
+    }
+  }
+
+  section#projects .project-carousel__item {
+    width: 100%;
+    max-width: 270px;
+    min-width: auto;
+  }
+
+  section#projects .project-carousel__title {
+    width: auto;
+    white-space: normal;
+  }
 }
