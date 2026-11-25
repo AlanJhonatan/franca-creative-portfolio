@@ -47,7 +47,7 @@ section.intro div.intro__inner {
 section.intro span:not(.intro__dot, .intro__title) {
   /* cubic-bezier(0.25, 1, 0.5, 1) */
   animation: reveal 2s linear forwards;
-  animation-delay: calc(sibling-index() * 200ms);
+  animation-delay: calc(sibling-index() * 175ms);
 
   &:hover {
     opacity: 1;
